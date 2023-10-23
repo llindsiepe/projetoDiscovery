@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color-light-mode: rgba(255, 255, 255, 0.1);
+  --surface-color-light-mode: rgba(255, 255, 255, 0.1);
+  --surface-color-light-mode-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color-light-mode: rgba(255, 255, 255, 0.2);
+
+  --icon-switch-light-mode: url(/assets/moon-stars.svg);
+  --stroke-color-switch-light-mode: rgba(255, 255, 255, 0.5);
+  --surface-color-switch-light-mode: rgba(255, 255, 255, 0.1);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color-light-mode: rgba(0, 0, 0, 0.5);
+  --surface-color-light-mode: rgba(0, 0, 0, 0.05);
+  --surface-color-light-mode-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color-light-mode: rgba(0, 0, 0, 0.1);
+
+  --icon-switch-light-mode: url(/assets/sun.svg);
+  --stroke-color-switch-light-mode: rgba(0, 0, 0, 0.5);
+  --surface-color-switch-light-mode: rgba(0, 0, 0, 0.05);
+}
+
+body {
+  background-image: var(--bg-url);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+body * {
+  color: var(--text-color);
+  font-family: "Inter", sans-serif;
+}
+
+#container {
+  width: 360px;
+  height: 712px;
+  margin: 56px auto 0px;
+
+  padding: 0 24px;
+}
+
+#profile {
+  padding: 24px;
+}
+
+#profile img {
+  display: block;
+  margin: auto;
+
+  width: 112px;
+}
+
+#profile h5 {
+  text-align: center;
+  font-weight: 500;
+
+  margin-top: 8px;
+}
+
+/* Lista de Links */
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 24px 0;
+}
+
+ul li a {
+  cursor: pointer;
+  text-decoration: none;
+
+  display: flex;
+  justify-content: center; /*Alinha na vertical */
+  align-items: center; /*Alinha na horizontal */
+
+  padding: 16px 24px;
+
+  border-radius: 8px;
+  border: 1px solid var(--stroke-color-light-mode);
+  background: var(--surface-color-light-mode);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  transition: all 0.5s;
+}
+
+ul li a:hover {
+  /* pseudo-selector */
+  background: var(--surface-color-light-mode-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+/* Social media icons */
+#social-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  padding: 8px 0;
+
+  gap: 16px;
+}
+
+#social-links ion-icon {
+  width: 25px;
+  height: 25px;
+  padding: 16px;
+}
+
+#social-links a ion-icon:hover {
+  background-color: var(--highlight-color-light-mode);
+  border-radius: 30px;
+  transition: background 0.2s;
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+#switch {
+  position: relative; /*Torna o absoluto do button, relativo ao espaço do switch*/
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff var(--icon-switch-light-mode) no-repeat center;
+
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 1; /*Andar em que o elemento se encontra */
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  border-radius: 9999px;
+  width: 64px;
+  height: 24px;
+  border: 1px solid var(--stroke-color-switch-light-mode);
+  background: var(--surface-color-switch-light-mode);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
