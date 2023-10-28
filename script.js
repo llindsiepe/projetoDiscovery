@@ -13,7 +13,7 @@ function toggleMode() {
   // simplificando...
   // html.classList.toggle('light')
 
-  // alterando a Imagem, segundo o tema
+  // alterando a imagem, segundo o tema
   if (html.classList.contains("light")) {
     img.setAttribute("src", "./assets/avatar-light.png")
   } else {
